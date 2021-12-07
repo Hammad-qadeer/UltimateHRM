@@ -1,12 +1,14 @@
 <template>
-
-
-
-
   <div class="login-slide slide">
     <div class="d-flex height-100-percentage">
+      
       <div class="align-self-center width-100-percentage">
-        <h3>Sign Ins</h3>
+        <div class="header">
+         
+         <img alt="Qries" src="/../images/logo1.png">
+    
+</div>
+
         <form @submit.prevent="login" @keydown="form.onKeydown($event)">
           <!-- Alert -->
           <alert-error :form="form"></alert-error>
@@ -14,15 +16,15 @@
           <div class="form-group user-name-field">
             <input
               v-model="form.email"
-              type="emails"
-              name="emails"
+              type="email"
+              name="email"
               class="form-control"
               :class="{ 'is-invalid': form.errors.has('email') }"
-              placeholder="Emails"
+              placeholder="Email"
               :disabled="form.busy"
             >
             <div class="field-icon">
-              <i class="ion-message"></i>
+              <i class="ion-person"></i>
             </div>
             <has-error :form="form" field="email"></has-error>
           </div>
@@ -49,12 +51,12 @@
               id="remember"
               :disabled="form.busy"
             >
-            <label class="custom-control-label" for="remember">Remember Mes</label>
+            <label class="custom-control-label" for="remember">Remember Me</label>
           </div>
-          <div class="form-group sign-in-btn btn btn-outline-warning">
+          <div class="form-group sign-in-btn">
             <button :disabled="form.busy" type="submit" class="submit">
               <i v-show="form.busy" class="fas fa-spinner fa-spin"></i>
-              <span>Sign Ind</span>
+              <span>Sign In</span>
             </button>
           </div>
         </form>
